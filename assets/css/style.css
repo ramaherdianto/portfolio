@@ -241,14 +241,66 @@ img {
 .active::after {
   position: absolute;
   content: "";
-  width: 100%;
+  width: 50%;
   height: 0.18rem;
-  left: 0;
+  left: 13px;
   top: 2rem;
   background-color: var(--first-color);
 }
 
+/*===== HERO =====*/
+.hero {
+  position: relative;
+  background-color: var(--first-color);
+  overflow: hidden;
+}
+
+.hero__container {
+  height: calc(100vh - var(--header-height));
+  row-gap: 5rem;
+}
+
+.hero__title {
+  align-self: flex-end;
+  font-size: var(--big-font-size);
+  color: var(--white-color);
+  line-height: 0.8;
+  user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+}
+
+.hero__title span {
+  text-shadow: 0 20px 25px rgba(0, 0, 0, 0.5);
+}
+
+.hero__scroll {
+  align-self: flex-end;
+  padding-bottom: var(--mb-4);
+}
+
+.hero__scroll-link {
+  writing-mode: vertical-lr;
+  transform: rotate(-180deg);
+  color: var(--white-color);
+}
+
+.hero__img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 295px;
+}
+
 /* ===== MEDIA QUERIES =====*/
+/* For mobile version */
+@media screen and (max-width: 320px) {
+  .hero__img {
+    width: 230px;
+  }
+}
 
 @media screen and (min-width: 769px) {
   body {
@@ -296,11 +348,33 @@ img {
   .active::after {
     background-color: var(--white-color);
   }
+
+  .hero__container {
+    height: 100vh;
+    grid-template-rows: 1.7fr 1fr;
+    row-gap: 0;
+  }
+
+  .hero__img {
+    width: 524px;
+    right: 10%;
+  }
 }
 
 @media screen and (min-width: 1024px) {
   .bd-grid {
     margin-left: auto;
     margin-right: auto;
+  }
+}
+
+/* For tall screens on mobiles and desktop*/
+@media screen and (min-height: 721px) {
+  .hero__container {
+    height: 640px;
+  }
+  .hero__img {
+    width: 500px;
+    right: 0;
   }
 }
