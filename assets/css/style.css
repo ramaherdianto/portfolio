@@ -15,7 +15,7 @@
   --text-color: #697477;
 }
 
-/*===== Fuente y tipografia =====*/
+/*===== Typography =====*/
 :root {
   --body-font: "Montserrat", sans-serif;
   --big-font-size: 6.25rem;
@@ -32,7 +32,7 @@
   }
 }
 
-/*===== Margenes =====*/
+/*===== Margin =====*/
 :root {
   --mb-1: 0.5rem;
   --mb-2: 1rem;
@@ -55,6 +55,60 @@
 html {
   scroll-behavior: smooth;
 }
+
+/*======== ANIMASI LOADER ========*/
+.loader {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  z-index: 9999;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--white-color);
+  user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+}
+
+.loader span {
+  font-size: 22px;
+  text-transform: uppercase;
+  margin: auto;
+}
+
+.ball {
+  width: 15px;
+  height: 15px;
+  z-index: 9999;
+  overflow: hidden;
+  margin: 0 0.5vw;
+  border-radius: 50%;
+  background-color: var(--first-color);
+  animation: bounce 0.5s alternate infinite;
+}
+
+.ball:nth-child(2) {
+  animation-delay: 0.16s;
+}
+
+.ball:nth-child(3) {
+  animation-delay: 0.32s;
+}
+
+@keyframes bounce {
+  from {
+    transform: scaleX(1.25);
+  }
+  to {
+    transform: translateY(-50px) scaleX(1);
+  }
+}
+
 body {
   margin: var(--header-height) 0 0 0;
   font-family: var(--body-font);
@@ -63,30 +117,35 @@ body {
   color: var(--text-color);
   line-height: 1.6;
 }
+
 h1,
 h2,
 p {
   margin: 0;
 }
+
 ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
+
 a {
   text-decoration: none;
   color: var(--text-color);
 }
+
 img {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
-/*===== CLASS CSS ===== */
+/*===== General CSS ===== */
 .section {
   padding: 3rem 0;
 }
+
 .section-title {
   position: relative;
   font-size: var(--h2-font-size);
@@ -94,6 +153,7 @@ img {
   margin: var(--mb-4) 0;
   text-align: center;
 }
+
 .section-title::after {
   position: absolute;
   content: "";
@@ -116,6 +176,7 @@ img {
   margin-left: var(--mb-2);
   margin-right: var(--mb-2);
 }
+
 .l-header {
   width: 100%;
   position: fixed;
@@ -132,6 +193,7 @@ img {
   justify-content: space-between;
   align-items: center;
 }
+
 @media screen and (max-width: 768px) {
   .nav__menu {
     position: fixed;
@@ -145,20 +207,25 @@ img {
     backdrop-filter: blur(10px);
   }
 }
+
 .nav__item {
   margin-bottom: var(--mb-4);
 }
+
 .nav__link {
   position: relative;
   color: var(--dark-color);
 }
+
 .nav__link:hover {
   color: var(--first-color);
 }
+
 .nav__logo {
   color: var(--white-color);
   font-size: 1.2rem;
 }
+
 .nav__toggle {
   color: var(--white-color);
   font-size: 1.5rem;
@@ -187,12 +254,15 @@ img {
   body {
     margin: 0;
   }
+
   .section {
     padding-top: 4rem;
   }
+
   .section-title {
     margin-bottom: 3rem;
   }
+
   .section-title::after {
     width: 64px;
     top: 3rem;
@@ -201,22 +271,28 @@ img {
   .nav {
     height: calc(var(--header-height) + 1rem);
   }
+
   .nav__list {
     display: flex;
   }
+
   .nav__item {
     margin-left: var(--mb-4);
     margin-bottom: 0;
   }
+
   .nav__toggle {
     display: none;
   }
+
   .nav__link {
     color: var(--white-color);
   }
+
   .nav__link:hover {
     color: var(--white-color);
   }
+
   .active::after {
     background-color: var(--white-color);
   }
