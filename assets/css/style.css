@@ -398,6 +398,20 @@ img {
     width: 524px;
     right: 10%;
   }
+
+  .about__container {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    text-align: initial;
+    padding: 4rem 0;
+  }
+  .about__img {
+    width: 200px;
+    height: 200px;
+  }
+  .about__img img {
+    width: 165px;
+  }
 }
 
 @media screen and (min-width: 1024px) {
