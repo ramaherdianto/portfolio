@@ -350,6 +350,7 @@ img {
   background-color: var(--white-color);
   border-radius: 0.25rem;
   transition: all 0.4s ease-in-out;
+  cursor: pointer;
 }
 .skills__name:hover {
   background-color: var(--first-color);
